@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./end.js"></script>
+    <link rel="stylesheet" href="./end.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />    <title>Schedule Meeting</title>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script>
+      var map = L.map('map').setView([31.89222, 35.01028], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      // Add search functionality
+      var controlSearch = new L.Control.Geocoder({
+        defaultMarkGeocode: false,
+      }).addTo(map);
+  
+      controlSearch.on('markgeocode', function (e) {
+        var latLng = e.geocode.center;
+        L.marker(latLng).addTo(map);
+        map.panTo(latLng);
+      });
+  
+      // Add routing functionality
+      var routeControl = L.Routing.control({
+        waypoints: [],
+        routeWhileDragging: true,
+        geocoder: L.Control.Geocoder.nominatim(),
+        router: L.Routing.mapbox('your-mapbox-api-key')
+      }).addTo(map);
+  
+      map.on('click', function (e) {
+        routeControl.spliceWaypoints(routeControl.getWaypoints().length - 1, 1, e.latlng);
+      });
+    </script>
+
+    <h1 id="greeting"></h1>
+    <a href="../enterance/en.html"><img src="../../pictures1/drive-to-top.png" id="drivetotop" height="55px" width="45px"></a>
+
+<div id="meetOfDeside">
+    <h1> :)אז בואו נדבר</h1>
+    <h2>בואו לשבת עם אנשי המקצוע שלנו, שיתאימו יחד אתכם את הרכב המושלם בשבילכם.</h2>
+    <div id="details_of_meet">
+    <p>?אז איך בעצם</p>
+    <p>אור החיים6</p>
+    <p>055-66998234</p>
+    <p>R.car8234@gmail.com</p>
+  </div>
+</div>
+
+<div id="time_meet">
+    <label for="date"  class="timeToMeet">תאריך:</label>
+    <input type="date" id="date" required><br>
+    <label for="day" class="timeToMeet">יום:</label>
+    <input type="text" id="day" required><br>
+    <label for="time"  class="timeToMeet">שעה:</label>
+    <input type="time" id="time" required><br>
+  </div>
+  <button onclick="saveMeetingDecision()">לקביעה</button>
+
+</body>
+</html>

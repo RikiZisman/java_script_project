@@ -1,0 +1,40 @@
+
+#come_back{
+    margin-left: 40%;
+    text-decoration: none;
+    color: rgb(41, 2, 2);
+    font-size: 40px;
+    padding-top: 16%;
+}
+
+#cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10%;
+  }
+  
+  #cars li {
+    width: calc(30% - 30px); /* Adjust the width as per your preference */
+    margin-bottom: 100px; /* Adjust the margin as per your preference */
+  }
+  #i_love{
+    border: none;
+  }
+  /* #i_love:hover{
+    background-image: url(../../../pictures1/full_heart.JPG);
+    width:"50px";
+     height:"40px";
+  } */
+  .myClass{
+  display: inline-block;  
+  margin-bottom: 0%;
+  margin-top: 0%;
+
+  }
+  .img{
+    width: 100%;
+    height: 88%;
+  }
+
+

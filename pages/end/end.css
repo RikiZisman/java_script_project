@@ -1,0 +1,43 @@
+
+
+.timeToMeet{
+    color: rgb(41, 40, 40);
+    border-radius: 35px;
+    font-size: 30px;
+    margin-left: 5%;
+    border-width: 20%;
+    background: none;
+    padding-top: 12px;
+}
+#meetOfDeside{
+    text-align: center;
+}
+p{
+    padding-left: 36%;
+    font-size: 20px;
+}
+#time_meet{
+    margin-left: 28%;
+    margin-top: -160px;
+
+}
+button{
+    font-size: 50px;
+    margin-left: 50px;
+}
+#come_back{
+    margin-left: 40%;
+    text-decoration: none;
+    color: rgb(41, 2, 2);
+    font-size: 20px;
+    padding-top: 16%;
+}
+h1{
+    text-align: center;
+    color: rgb(41, 2, 2);
+    font-size: 30px;
+}
+#details_of_meet{
+    display: inline-block;
+    margin-left: 26%;
+}
